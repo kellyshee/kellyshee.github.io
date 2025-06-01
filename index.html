@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-tutorial</title>
+<title>How to Publish a Quarto Website with Github Actions – quarto-tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,6 +75,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-45f57f8a07e7c00c3616f5ca7743c666.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,15 +146,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#create-a-r-project" id="toc-create-a-r-project" class="nav-link active" data-scroll-target="#create-a-r-project">1. Create a R project</a></li>
+  <li><a href="#create-a-github-repo" id="toc-create-a-github-repo" class="nav-link" data-scroll-target="#create-a-github-repo">2. Create a Github repo</a></li>
+  <li><a href="#copy-git-commands" id="toc-copy-git-commands" class="nav-link" data-scroll-target="#copy-git-commands">3. Copy git commands</a></li>
+  <li><a href="#paste-git-commands-into-rstudio-terminal" id="toc-paste-git-commands-into-rstudio-terminal" class="nav-link" data-scroll-target="#paste-git-commands-into-rstudio-terminal">4. Paste git commands into RStudio terminal</a></li>
+  <li><a href="#push-upload-local-files-to-your-repo" id="toc-push-upload-local-files-to-your-repo" class="nav-link" data-scroll-target="#push-upload-local-files-to-your-repo">5. Push (upload) local files to your repo</a></li>
+  <li><a href="#create-gh-pages-branch" id="toc-create-gh-pages-branch" class="nav-link" data-scroll-target="#create-gh-pages-branch">6. Create gh-pages branch</a></li>
+  <li><a href="#create-folders-and-text-file" id="toc-create-folders-and-text-file" class="nav-link" data-scroll-target="#create-folders-and-text-file">7. Create folders and text file</a></li>
+  <li><a href="#copy-and-paste-code-into-publish.yml" id="toc-copy-and-paste-code-into-publish.yml" class="nav-link" data-scroll-target="#copy-and-paste-code-into-publish.yml">10. Copy and paste code into publish.yml</a></li>
+  </ul>
+<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://www.youtube.com/watch?v=arzBRW5XIkg&amp;list=LL"><i class="bi bi-link-45deg"></i>Youtube guide</a></li><li><a href="https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv"><i class="bi bi-link-45deg"></i>Knitr with renv</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">quarto-tutorial</h1>
+<h1 class="title">How to Publish a Quarto Website with Github Actions</h1>
 </div>
 
 
@@ -168,16 +184,113 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<p>You must have the following:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">RStudio</label></li>
+<li><label><input type="checkbox">Github account</label></li>
+</ul>
+<p>Note: This website’s directory is <code>quarto-tutorial</code>. The directory in the images is <code>quarto_web_tutorial</code>, which I deleted because I prefer dashes instead of underscores in the url.</p>
+<section id="create-a-r-project" class="level1">
+<h1>1. Create a R project</h1>
+<p>Go to: File &gt; New Project &gt; New Directory &gt; Quarto Website</p>
+<ul>
+<li><strong>Directory name</strong>
+<ul>
+<li>If this website is for…
+<ul>
+<li>yourself: your-github-username.github.io</li>
+<li>class: your-class-name</li>
+</ul></li>
+</ul></li>
+<li>Create project as <strong>subdirectory</strong>
+<ul>
+<li>Where do you want to place this project? It should be somewhere easy to find, such as on your desktop.</li>
+<li>I’ll be creating more version-controlled projects, so I placed this directory (quarto-tutorial) inside my “github” folder, which is located inside my Box drive. Therefore, this directory’s file path is the following: <code>... &gt; Box-Box &gt; github &gt; quarto-tutorial &gt; quarto-tutorial.Rproj</code></li>
+</ul></li>
+<li>Engine: <strong>Knitr</strong></li>
+<li>Select <strong>Create a git repository</strong></li>
+<li>Select <strong>Use renv with this project</strong></li>
+</ul>
+<p><img src="images/01_create_project.png" class="img-fluid" alt="test"> <img src="images/02_project_created.png" class="img-fluid"></p>
+</section>
+<section id="create-a-github-repo" class="level1">
+<h1>2. Create a Github repo</h1>
+<p>Type your <strong>repository name</strong>, which is the same as your directory name. Do not change anything else and scroll down to create your repository.</p>
+<p><a href="images/03_create_repo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/03_create_repo.png" class="img-fluid"></a></p>
+</section>
+<section id="copy-git-commands" class="level1">
+<h1>3. Copy git commands</h1>
+<p>Scroll to the section that says “. . . or push an existing repository from the command line.” Copy the first two lines, then return to RStudio.</p>
+<p><a href="images/04_copy_git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/04_copy_git.png" class="img-fluid"></a></p>
+</section>
+<section id="paste-git-commands-into-rstudio-terminal" class="level1">
+<h1>4. Paste git commands into RStudio terminal</h1>
+<p>Paste and enter the commands. The terminal will not return anything.</p>
+<p><a href="images/05_paste_git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/05_paste_git.png" class="img-fluid"></a></p>
+</section>
+<section id="push-upload-local-files-to-your-repo" class="level1">
+<h1>5. Push (upload) local files to your repo</h1>
+<p>Copy and paste the following commands one by one into the terminal. Output will apppear. Remember these commands as future you will use them frequently!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git add .</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>git commit <span class="sc">-</span>m <span class="st">"Initial commit"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>git push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><a href="images/06_push.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/06_push.png" class="img-fluid"></a></p>
+<p>Return to your Github repository. Your project’s files should appear there.</p>
+<p><a href="images/07_files_appear.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/07_files_appear.png" class="img-fluid"></a></p>
+</section>
+<section id="create-gh-pages-branch" class="level1">
+<h1>6. Create gh-pages branch</h1>
+<p><img src="images/08_create_branch.png" class="img-fluid"> <img src="images/09_gh-pages.png" class="img-fluid"></p>
+<p><a href="images/10_gh-pages_created.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/10_gh-pages_created.png" class="img-fluid"></a></p>
+</section>
+<section id="create-folders-and-text-file" class="level1">
+<h1>7. Create folders and text file</h1>
+<p><a href="images/11_github_folder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/11_github_folder.png" class="img-fluid"></a></p>
+</section>
+<section id="copy-and-paste-code-into-publish.yml" class="level1">
+<h1>10. Copy and paste code into publish.yml</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>on<span class="sc">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  workflow_dispatch<span class="sc">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  push<span class="sc">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    branches<span class="sc">:</span> main</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>name<span class="sc">:</span> Quarto Publish</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>jobs<span class="sc">:</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  build<span class="sc">-</span>deploy<span class="sc">:</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    runs<span class="sc">-</span>on<span class="sc">:</span> ubuntu<span class="sc">-</span>latest</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    permissions<span class="sc">:</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      contents<span class="sc">:</span> write</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    steps<span class="sc">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> Check out repository</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        uses<span class="sc">:</span> actions<span class="sc">/</span>checkout<span class="sc">@</span>v4</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> Set up Quarto</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        uses<span class="sc">:</span> quarto<span class="sc">-</span>dev<span class="sc">/</span>quarto<span class="sc">-</span>actions<span class="sc">/</span>setup<span class="sc">@</span>v2</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> Install R</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>r<span class="sc">@</span>v2</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        with<span class="sc">:</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>          r<span class="sc">-</span>version<span class="sc">:</span> <span class="st">'4.2.0'</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> Install R Dependencies</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>renv<span class="sc">@</span>v2</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        with<span class="sc">:</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>          cache<span class="sc">-</span>version<span class="sc">:</span> <span class="dv">1</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> Render and Publish</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        uses<span class="sc">:</span> quarto<span class="sc">-</span>dev<span class="sc">/</span>quarto<span class="sc">-</span>actions<span class="sc">/</span>publish<span class="sc">@</span>v2</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        with<span class="sc">:</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>          target<span class="sc">:</span> gh<span class="sc">-</span>pages</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        env<span class="sc">:</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>          GITHUB_TOKEN<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -580,6 +693,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
