@@ -1,15 +1,125 @@
 ---
-title: "quarto-tutorial"
+title: "How to Publish a Quarto Website with Github Actions"
 
 format: 
   html:
     code-copy: true
+    other-links:
+      - text: Youtube guide
+        href: https://www.youtube.com/watch?v=arzBRW5XIkg&list=LL
+      - text: Knitr with renv
+        href: https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv
+        
+lightbox: true
 ---
 
-This is a Quarto website.
+You must have the following:
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+- [ ] RStudio
+- [ ] Github account
 
-```{r}
-1 + 1
+Note: This website's directory is `quarto-tutorial`. The directory in the images is `quarto_web_tutorial`, which I deleted because I prefer dashes instead of underscores in the url.
+
+# 1. Create a R project
+
+Go to: File > New Project > New Directory > Quarto Website
+
+* **Directory name** 
+  + If this website is for...
+    - yourself: your-github-username.github.io
+    - class: your-class-name 
+* Create project as **subdirectory**
+  + Where do you want to place this project? It should be somewhere easy to find, such as on your desktop.
+  + I'll be creating more version-controlled projects, so I placed this directory (quarto-tutorial) inside my "github" folder, which is located inside my Box drive. Therefore, this directory's file path is the following: `... > Box-Box > github > quarto-tutorial > quarto-tutorial.Rproj`
+* Engine: **Knitr**
+* Select **Create a git repository**
+* Select **Use renv with this project**
+
+
+![test](images/01_create_project.png)
+![](images/02_project_created.png)
+
+# 2. Create a Github repo
+
+Type your **repository name**, which is the same as your directory name. Do not change anything else and scroll down to create your repository.
+
+![](images/03_create_repo.png)
+
+# 3. Copy git commands 
+
+Scroll to the section that says ". . . or push an existing repository from the command line." Copy the first two lines, then return to RStudio.
+
+![](images/04_copy_git.png)
+
+# 4. Paste git commands into RStudio terminal
+
+Paste and enter the commands. The terminal will not return anything.
+
+![](images/05_paste_git.png)
+
+# 5. Push (upload) local files to your repo
+
+Copy and paste the following commands one by one into the terminal. Output will apppear. Remember these commands as future you will use them frequently! 
+
+```{r, eval=F}
+git add .
+git commit -m "Initial commit"
+git push origin main
+```
+
+![](images/06_push.png)
+
+Return to your Github repository. Your project's files should appear there.
+
+![](images/07_files_appear.png)
+
+# 6. Create gh-pages branch
+
+![](images/08_create_branch.png)
+![](images/09_gh-pages.png)
+
+![](images/10_gh-pages_created.png)
+
+# 7. Create folders and text file
+
+![](images/11_github_folder.png)
+
+# 10. Copy and paste code into publish.yml
+
+```{r, eval = F}
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.2.0'
+
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 1
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
