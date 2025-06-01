@@ -1,5 +1,9 @@
 ---
 title: "quarto-tutorial"
+
+format: 
+  html:
+    code-copy: true
 ---
 
 This is a Quarto website.
