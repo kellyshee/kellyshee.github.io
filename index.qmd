@@ -11,6 +11,8 @@ format:
         href: https://quarto.org/docs/publishing/GitHub-pages.html#example-knitr-with-renv
         
 lightbox: true
+
+number-sections: true
 ---
 
 You must have the following:
@@ -20,7 +22,7 @@ You must have the following:
 
 Note: This website's directory is `quarto-tutorial`. The directory in the images is `quarto_web_tutorial`, which I deleted because I prefer dashes over underscores in URLs.
 
-# 1. Create a R project
+# Create a R project
 
 Actions: File > New Project > New Directory > Quarto Website
 
@@ -39,7 +41,7 @@ Actions: File > New Project > New Directory > Quarto Website
 ![test](images/01_create_project.png)
 ![](images/02_project_created.png)
 
-# 2. Create a GitHub repo
+# Create a GitHub repo
 
 Actions: 
 
@@ -50,7 +52,7 @@ Actions:
 
 ![](images/03_create_repo.png)
 
-# 3. Copy git commands 
+# Copy git commands 
 
 Actions: 
 
@@ -60,7 +62,7 @@ Actions:
 
 ![](images/04_copy_git.png)
 
-# 4. Paste git commands into RStudio terminal
+# Paste git commands into RStudio terminal
 
 Actions:
 
@@ -69,7 +71,7 @@ Actions:
 
 ![](images/05_paste_git.png)
 
-# 5. Push local files to repo
+# Push local files to repo
 
 Actions:
 
@@ -87,7 +89,7 @@ git push origin main
 
 ![](images/07_files_appear.png)
 
-# 6. Create gh-pages branch
+# Create gh-pages branch
 
 Actions: 
 
@@ -107,7 +109,7 @@ Return to RStudio
 
 ![](images/10_gh-pages_created.png)
 
-# 7. Create folders and publish.yml
+# Create folders and publish.yml
 
 Actions: 
 
@@ -121,7 +123,7 @@ The file path of `publish.yml` should be the following: `... > your-directory > 
 
 ![](images/13_publishyml.png)
 
-# 8. Copy and paste code into publish.yml
+# Copy and paste code into publish.yml
 
 Paste the following code into `publish.yml`, then save the file.
 
@@ -163,7 +165,7 @@ jobs:
           GitHub_TOKEN: ${{ secrets.GitHub_TOKEN }}
 ```
 
-# 9. Push publish.yml to repo
+# Push publish.yml to repo
 
 Actions:
 
@@ -178,7 +180,7 @@ git push origin main
 
 ![](images/16_push.png)
 
-# 10. Check repo settings
+# Check repo settings
 
 Actions:
 
