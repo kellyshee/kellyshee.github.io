@@ -9,10 +9,13 @@ format:
         href: https://www.youtube.com/watch?v=arzBRW5XIkg&list=LL
       - text: Knitr with renv
         href: https://quarto.org/docs/publishing/GitHub-pages.html#example-knitr-with-renv
-        
-lightbox: true
 
 number-sections: true
+
+# code-block-bg: true
+# code-block-border-left: "#31BAE9"
+
+lightbox: true
 ---
 
 You must have the following:
@@ -47,8 +50,9 @@ Actions: File > New Project > New Directory > Quarto Website
 5. Select **Use renv with this project**
 
 
-![](images/01_create_project.png)
-![](images/02_project_created.png)
+![](images/01_create_project.png){group="my-gallery"}
+
+![](images/02_project_created.png){group="my-gallery"}
 
 # Create a GitHub repo
 
@@ -59,9 +63,9 @@ Actions:
 3. Type your **repository name**, which must be the same as your directory name. 
 4. Do not change anything else. Scroll down to create your repository.
 
-![](images/03_create_repo.png)
+![](images/03_create_repo.png){group="my-gallery"}
 
-# Copy git commands 
+# Copy Git commands 
 
 Actions: 
 
@@ -69,16 +73,16 @@ Actions:
 2. Copy the first two lines.
 3. Return to RStudio.
 
-![](images/04_copy_git.png)
+![](images/04_copy_git.png){group="my-gallery"}
 
-# Paste git commands into RStudio terminal
+# Paste Git commands into terminal
 
 Actions:
 
 1. Navigate to the console pane and switch to the terminal tab.
 2. Paste and enter the commands. The terminal will not return anything.
 
-![](images/05_paste_git.png)
+![](images/05_paste_git.png){group="my-gallery"}
 
 # Push local files to repo
 
@@ -86,17 +90,17 @@ Actions:
 
 1. Copy and paste the following commands one by one into the terminal. Output will apppear, indicating that files are being uploaded to your repository. Remember these commands as future you will use them frequently! 
 
-```{r, eval=F}
+```{r, eval=F, filename = "Terminal"}
 git add .
 git commit -m "Initial commit"
 git push origin main
 ```
 
-![](images/06_push.png)
+![](images/06_push.png){group="my-gallery"}
 
 2. Return to your GitHub repository. Your project's files should appear there.
 
-![](images/07_files_appear.png)
+![](images/07_files_appear.png){group="my-gallery"}
 
 # Create gh-pages branch
 
@@ -105,12 +109,12 @@ Actions:
 1. On the same page, click the "main" branch button underneath the repository name.
 2. Click "View all branches."
 
-![](images/08_create_branch.png)
+![](images/08_create_branch.png){group="my-gallery"}
 
 3. Click "New branch" on the right side of the screen.
 4. Name and create a **new branch** called `gh-pages`.
 
-![](images/09_gh-pages.png)
+![](images/09_gh-pages.png){group="my-gallery"}
 
 # Create automation file
 
@@ -121,7 +125,7 @@ Actions:
 3. Inside the `.github` folder, create **another new folder** named `workflows`
 4. Inside the `workflows` folder, create a **text file** named `publish.yml`.
 
-The file path of `publish.yml` should be the following: `... > your-directory > .github > workflows > publish.yml`.
+The file path of `publish.yml` should be the following:
 
 ```{r eval=F}
 ├── ...
@@ -133,13 +137,15 @@ The file path of `publish.yml` should be the following: `... > your-directory > 
         ├── publish.yml
 ```
 
-![](images/13_publishyml.png)
+![](images/13_publishyml.png){group="my-gallery"}
 
 # Copy and paste code into publish.yml
 
 Paste the following code into `publish.yml`, then save the file.
 
-```{r, eval = F}
+```{r, eval = F, filename = ".github/workflows/publish.yml"}
+# Knitr with renv
+
 on:
   workflow_dispatch:
   push:
@@ -184,29 +190,29 @@ Actions:
 1. Return to the terminal tab in the console pane.
 2. Copy and paste the following commands line by line into the terminal. Output will appear.
 
-```{r, eval=F}
+```{r, eval=F, filename = "Terminal"}
 git add .
 git commit -m "Add publish.yml to automate publishing of site"
 git push origin main
 ``` 
 
-![](images/16_push.png)
+![](images/16_push.png){group="my-gallery"}
 
 # Check repo settings
 
 Actions:
 
 1. Return to GitHub.
-2. Click on the Actions tab. Wait until all actions are green (indicating that the website has been built).
+2. Click on the Actions tab. Wait until all actions are green.
 
-![](images/19_actions_done.png)
+![](images/19_actions_done.png){group="my-gallery"}
 
 3. Click on the "Settings" tab. Look at the side column and click "Pages." Ensure that your GitHub Pages site is built from the `gh-pages` branch.
 
-![](images/17_settings_gh-pages.png)
+![](images/17_settings_gh-pages.png){group="my-gallery"}
 4. Click "Visit site" at the top of the page. Congratulations, you've built your site! Whenever you edit this site in RStudio, you can use the three Git commands to publish it automatically. It'll take a couple minutes for the site to change.
 
-![](images/21_website_created.png)
+![](images/21_website_created.png){group="my-gallery"}
 
 
 
