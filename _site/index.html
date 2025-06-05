@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>How to Publish a Quarto Website with Github Actions – quarto-tutorial</title>
+<title>How to Publish a Quarto Website with GitHub Actions – quarto-tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,22 +150,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#create-a-r-project" id="toc-create-a-r-project" class="nav-link active" data-scroll-target="#create-a-r-project">1. Create a R project</a></li>
-  <li><a href="#create-a-github-repo" id="toc-create-a-github-repo" class="nav-link" data-scroll-target="#create-a-github-repo">2. Create a Github repo</a></li>
+  <li><a href="#create-a-github-repo" id="toc-create-a-github-repo" class="nav-link" data-scroll-target="#create-a-github-repo">2. Create a GitHub repo</a></li>
   <li><a href="#copy-git-commands" id="toc-copy-git-commands" class="nav-link" data-scroll-target="#copy-git-commands">3. Copy git commands</a></li>
   <li><a href="#paste-git-commands-into-rstudio-terminal" id="toc-paste-git-commands-into-rstudio-terminal" class="nav-link" data-scroll-target="#paste-git-commands-into-rstudio-terminal">4. Paste git commands into RStudio terminal</a></li>
-  <li><a href="#push-upload-local-files-to-your-repo" id="toc-push-upload-local-files-to-your-repo" class="nav-link" data-scroll-target="#push-upload-local-files-to-your-repo">5. Push (upload) local files to your repo</a></li>
+  <li><a href="#push-local-files-to-repo" id="toc-push-local-files-to-repo" class="nav-link" data-scroll-target="#push-local-files-to-repo">5. Push local files to repo</a></li>
   <li><a href="#create-gh-pages-branch" id="toc-create-gh-pages-branch" class="nav-link" data-scroll-target="#create-gh-pages-branch">6. Create gh-pages branch</a></li>
-  <li><a href="#create-folders-and-text-file" id="toc-create-folders-and-text-file" class="nav-link" data-scroll-target="#create-folders-and-text-file">7. Create folders and text file</a></li>
-  <li><a href="#copy-and-paste-code-into-publish.yml" id="toc-copy-and-paste-code-into-publish.yml" class="nav-link" data-scroll-target="#copy-and-paste-code-into-publish.yml">10. Copy and paste code into publish.yml</a></li>
+  <li><a href="#create-folders-and-publish.yml" id="toc-create-folders-and-publish.yml" class="nav-link" data-scroll-target="#create-folders-and-publish.yml">7. Create folders and publish.yml</a></li>
+  <li><a href="#copy-and-paste-code-into-publish.yml" id="toc-copy-and-paste-code-into-publish.yml" class="nav-link" data-scroll-target="#copy-and-paste-code-into-publish.yml">8. Copy and paste code into publish.yml</a></li>
+  <li><a href="#push-publish.yml-to-repo" id="toc-push-publish.yml-to-repo" class="nav-link" data-scroll-target="#push-publish.yml-to-repo">9. Push publish.yml to repo</a></li>
+  <li><a href="#check-repo-settings" id="toc-check-repo-settings" class="nav-link" data-scroll-target="#check-repo-settings">10. Check repo settings</a></li>
   </ul>
-<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://www.youtube.com/watch?v=arzBRW5XIkg&amp;list=LL"><i class="bi bi-link-45deg"></i>Youtube guide</a></li><li><a href="https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv"><i class="bi bi-link-45deg"></i>Knitr with renv</a></li></ul></div></nav>
+<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://www.youtube.com/watch?v=arzBRW5XIkg&amp;list=LL"><i class="bi bi-link-45deg"></i>Youtube guide</a></li><li><a href="https://quarto.org/docs/publishing/GitHub-pages.html#example-knitr-with-renv"><i class="bi bi-link-45deg"></i>Knitr with renv</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How to Publish a Quarto Website with Github Actions</h1>
+<h1 class="title">How to Publish a Quarto Website with GitHub Actions</h1>
 </div>
 
 
@@ -185,12 +187,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You must have the following:</p>
 <ul class="task-list">
 <li><label><input type="checkbox">RStudio</label></li>
-<li><label><input type="checkbox">Github account</label></li>
+<li><label><input type="checkbox">GitHub account</label></li>
 </ul>
-<p>Note: This website’s directory is <code>quarto-tutorial</code>. The directory in the images is <code>quarto_web_tutorial</code>, which I deleted because I prefer dashes instead of underscores in the url.</p>
+<p>Note: This website’s directory is <code>quarto-tutorial</code>. The directory in the images is <code>quarto_web_tutorial</code>, which I deleted because I prefer dashes over underscores in URLs.</p>
 <section id="create-a-r-project" class="level1">
 <h1>1. Create a R project</h1>
-<p>Go to: File &gt; New Project &gt; New Directory &gt; Quarto Website</p>
+<p>Actions: File &gt; New Project &gt; New Directory &gt; Quarto Website</p>
 <ul>
 <li><strong>Directory name</strong>
 <ul>
@@ -203,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create project as <strong>subdirectory</strong>
 <ul>
 <li>Where do you want to place this project? It should be somewhere easy to find, such as on your desktop.</li>
-<li>I’ll be creating more version-controlled projects, so I placed this directory (quarto-tutorial) inside my “github” folder, which is located inside my Box drive. Therefore, this directory’s file path is the following: <code>... &gt; Box-Box &gt; github &gt; quarto-tutorial &gt; quarto-tutorial.Rproj</code></li>
+<li>I’ll be creating more version-controlled projects, so I placed this directory (quarto-tutorial) inside a “github” folder, which is located inside my Box drive. Therefore, this directory’s file path is the following: <code>... &gt; Box-Box &gt; github &gt; quarto-tutorial &gt; quarto-tutorial.Rproj</code></li>
 </ul></li>
 <li>Engine: <strong>Knitr</strong></li>
 <li>Select <strong>Create a git repository</strong></li>
@@ -212,43 +214,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/01_create_project.png" class="img-fluid" alt="test"> <img src="images/02_project_created.png" class="img-fluid"></p>
 </section>
 <section id="create-a-github-repo" class="level1">
-<h1>2. Create a Github repo</h1>
-<p>Type your <strong>repository name</strong>, which is the same as your directory name. Do not change anything else and scroll down to create your repository.</p>
+<h1>2. Create a GitHub repo</h1>
+<p>Actions:</p>
+<ol type="1">
+<li>Go to <a href="https://GitHub.com">GitHub</a>.</li>
+<li>Click the green “New” button next to “Top repositories” in the left column.</li>
+<li>Type your <strong>repository name</strong>, which is the same as your directory name.</li>
+<li>Do not change anything else. Scroll down to create your repository.</li>
+</ol>
 <p><a href="images/03_create_repo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/03_create_repo.png" class="img-fluid"></a></p>
 </section>
 <section id="copy-git-commands" class="level1">
 <h1>3. Copy git commands</h1>
-<p>Scroll to the section that says “. . . or push an existing repository from the command line.” Copy the first two lines, then return to RStudio.</p>
+<p>Actions:</p>
+<ol type="1">
+<li>Scroll to the section that says “. . . or push an existing repository from the command line.”</li>
+<li>Copy the first two lines.</li>
+<li>Return to RStudio.</li>
+</ol>
 <p><a href="images/04_copy_git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/04_copy_git.png" class="img-fluid"></a></p>
 </section>
 <section id="paste-git-commands-into-rstudio-terminal" class="level1">
 <h1>4. Paste git commands into RStudio terminal</h1>
-<p>Paste and enter the commands. The terminal will not return anything.</p>
+<p>Actions:</p>
+<ol type="1">
+<li>Go to the console pane and switch to the terminal tab.</li>
+<li>Paste and enter the commands. The terminal will not return anything.</li>
+</ol>
 <p><a href="images/05_paste_git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/05_paste_git.png" class="img-fluid"></a></p>
 </section>
-<section id="push-upload-local-files-to-your-repo" class="level1">
-<h1>5. Push (upload) local files to your repo</h1>
-<p>Copy and paste the following commands one by one into the terminal. Output will apppear. Remember these commands as future you will use them frequently!</p>
+<section id="push-local-files-to-repo" class="level1">
+<h1>5. Push local files to repo</h1>
+<p>Actions:</p>
+<ol type="1">
+<li>Copy and paste the following commands one by one into the terminal. Output will apppear, indicating that files are being uploaded to your repository. Remember these commands as future you will use them frequently!</li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git add .</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>git commit <span class="sc">-</span>m <span class="st">"Initial commit"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>git push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="images/06_push.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/06_push.png" class="img-fluid"></a></p>
-<p>Return to your Github repository. Your project’s files should appear there.</p>
+<ol start="2" type="1">
+<li>Return to your GitHub repository. Your project’s files should appear there.</li>
+</ol>
 <p><a href="images/07_files_appear.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/07_files_appear.png" class="img-fluid"></a></p>
 </section>
 <section id="create-gh-pages-branch" class="level1">
 <h1>6. Create gh-pages branch</h1>
+<p>Actions:</p>
+<ol type="1">
+<li>On your repository’s page, click the “main” branch button under your repository’s name.</li>
+<li>Click “View all branches.”</li>
+<li>Click “New branch” on the right side of the screen.</li>
+<li>Name and create a new branch called <strong>gh-pages</strong>.</li>
+</ol>
+<p><strong>New branch name:</strong> gh-pages</p>
+<p>Create new branch</p>
+<p>Return to RStudio</p>
 <p><img src="images/08_create_branch.png" class="img-fluid"> <img src="images/09_gh-pages.png" class="img-fluid"></p>
 <p><a href="images/10_gh-pages_created.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/10_gh-pages_created.png" class="img-fluid"></a></p>
 </section>
-<section id="create-folders-and-text-file" class="level1">
-<h1>7. Create folders and text file</h1>
-<p><a href="images/11_github_folder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/11_github_folder.png" class="img-fluid"></a></p>
+<section id="create-folders-and-publish.yml" class="level1">
+<h1>7. Create folders and publish.yml</h1>
+<p>Actions:</p>
+<ol type="1">
+<li>Return to RStudio</li>
+<li>Go to Files panel</li>
+<li>Create a <strong>new folder</strong> named <code>.GitHub</code></li>
+<li>Inside <code>.GitHub</code> folder, create <strong>another new folder</strong> named <code>workflows</code></li>
+<li>Inside <code>workflows</code>, create a <strong>text file</strong> named <code>publish.yml</code></li>
+</ol>
+<p>The file path of <code>publish.yml</code> should be the following: <code>... &gt; your-directory &gt; .GitHub &gt; workflows &gt; publish.yml</code>.</p>
+<p><a href="images/13_publishyml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/13_publishyml.png" class="img-fluid"></a></p>
 </section>
 <section id="copy-and-paste-code-into-publish.yml" class="level1">
-<h1>10. Copy and paste code into publish.yml</h1>
+<h1>8. Copy and paste code into publish.yml</h1>
+<p>Paste the following code into <code>publish.yml</code>, then save the file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>on<span class="sc">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  workflow_dispatch<span class="sc">:</span></span>
@@ -284,8 +326,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        with<span class="sc">:</span></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>          target<span class="sc">:</span> gh<span class="sc">-</span>pages</span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        env<span class="sc">:</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>          GITHUB_TOKEN<span class="sc">:</span> <span class="er">$</span>{{ secrets.GITHUB_TOKEN }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>          GitHub_TOKEN<span class="sc">:</span> <span class="er">$</span>{{ secrets.GitHub_TOKEN }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="push-publish.yml-to-repo" class="level1">
+<h1>9. Push publish.yml to repo</h1>
+<p>Actions:</p>
+<ol type="1">
+<li>Return to the terminal tab in the console pane.</li>
+<li>Copy and paste the following commands line by line into the terminal. Output will appear.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git add .</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>git commit <span class="sc">-</span>m <span class="st">"Add publish.yml to automate publishing of site"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>git push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a href="images/16_push.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/16_push.png" class="img-fluid"></a></p>
+</section>
+<section id="check-repo-settings" class="level1">
+<h1>10. Check repo settings</h1>
+<p>Actions:</p>
+<ol type="1">
+<li>Return to GitHub.</li>
+<li>Click on the Actions tab. Wait until all actions are green (website is built).</li>
+</ol>
+<p><a href="images/19_actions_done.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/19_actions_done.png" class="img-fluid"></a></p>
+<ol start="3" type="1">
+<li>Click on the Settings tab. Look at the side column and click “Pages.” Ensure that your GitHub Pages site is built from the <strong>gh-pages branch</strong>.</li>
+</ol>
+<p><img src="images/17_settings_gh-pages.png" class="img-fluid"> 4. Click <strong>Visit site</strong> at the top of the page. Congratulations, you’ve built your site! Whenever you edit this site in RStudio, you can use the three Git commands to publish it automatically. It’ll take a couple minutes for the site to change.</p>
+<p><a href="images/21_website_created.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/21_website_created.png" class="img-fluid"></a></p>
 
 
 </section>
@@ -712,7 +782,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
