@@ -2,15 +2,19 @@ project:
   type: website
 
 website:
-  title: "quarto-tutorial"
+  title: "Quarto Tutorial"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+  bread-crumbs: true
+  # back-to-top-navigation: true
 
 format:
   html:
+    # respect-user-color-scheme: true
+    # theme: journal
     theme: cosmo
     css: styles.css
     toc: true

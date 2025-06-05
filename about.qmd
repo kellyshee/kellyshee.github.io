@@ -2,8 +2,4 @@
 title: "About"
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+This website is a guide on how to easily publish and maintain a Quarto website using RStudio and GitHub. I learned this from [Melissa Van Bussel](https://www.melissavanbussel.com). My tutorial differs from hers in that I use RStudio's terminal instead of a Windows terminal with zsh.
