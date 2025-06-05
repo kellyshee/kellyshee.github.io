@@ -20,25 +20,34 @@ You must have the following:
 - [ ] RStudio
 - [ ] GitHub account
 
-Note: This website's directory is `quarto-tutorial`. The directory in the images is `quarto_web_tutorial`, which I deleted because I prefer dashes over underscores in URLs.
+::: {.callout-note}
+This website's directory is `quarto-tutorial`. The directory in the images is `quarto_web_tutorial`, which I deleted because I prefer dashes over underscores in URLs.
+:::
 
 # Create a R project
 
 Actions: File > New Project > New Directory > Quarto Website
 
-* **Directory name** 
-  + If this website is for...
-    - yourself: your-github-username.github.io
-    - class: your-class-name 
-* Create project as **subdirectory**
-  + Where do you want to place this project? It should be somewhere easy to find, such as on your desktop.
-  + I'll be creating more version-controlled projects, so I placed this directory (quarto-tutorial) inside a "github" folder, which is located inside my Box drive. Therefore, this directory's file path is the following: `... > Box-Box > github > quarto-tutorial > quarto-tutorial.Rproj`
-* Engine: **Knitr**
-* Select **Create a git repository**
-* Select **Use renv with this project**
+1. **Directory name** 
+    i) If this website is for . . .
+         A.  yourself: `your-github-username.github.io`
+         B.  class: `your-class-name`
+2. Create project as **subdirectory**
+    i) Where do you want to place this project? It should be somewhere easy to find, such as on your desktop.
+    ii) I'll be creating more version-controlled projects, so I placed this directory (`quarto-tutorial`) inside a "github" folder, which is located inside my Box drive. Therefore, this directory's file path is the following:
+  
+```{r eval=FALSE}
+├── Box-Box
+  ├── github
+    ├── quarto-tutorial
+```
+
+3. Engine: **Knitr**
+4. Select **Create a git repository**
+5. Select **Use renv with this project**
 
 
-![test](images/01_create_project.png)
+![](images/01_create_project.png)
 ![](images/02_project_created.png)
 
 # Create a GitHub repo
@@ -47,7 +56,7 @@ Actions:
 
 1. Go to [GitHub](https://GitHub.com).
 2. Click the green "New" button next to "Top repositories" in the left column.
-3. Type your **repository name**, which is the same as your directory name. 
+3. Type your **repository name**, which must be the same as your directory name. 
 4. Do not change anything else. Scroll down to create your repository.
 
 ![](images/03_create_repo.png)
@@ -66,7 +75,7 @@ Actions:
 
 Actions:
 
-1. Go to the console pane and switch to the terminal tab.
+1. Navigate to the console pane and switch to the terminal tab.
 2. Paste and enter the commands. The terminal will not return anything.
 
 ![](images/05_paste_git.png)
@@ -93,33 +102,36 @@ git push origin main
 
 Actions: 
 
-1. On your repository's page, click the "main" branch button under your repository's name.
+1. On the same page, click the "main" branch button underneath the repository name.
 2. Click "View all branches."
-3. Click "New branch" on the right side of the screen.
-4. Name and create a new branch called **gh-pages**.
-
-**New branch name:** gh-pages
-
-Create new branch
-
-Return to RStudio
 
 ![](images/08_create_branch.png)
+
+3. Click "New branch" on the right side of the screen.
+4. Name and create a **new branch** called `gh-pages`.
+
 ![](images/09_gh-pages.png)
 
-![](images/10_gh-pages_created.png)
-
-# Create folders and publish.yml
+# Create automation file
 
 Actions: 
 
-1. Return to RStudio
-2. Go to Files panel 
-3. Create a **new folder** named `.GitHub`
-4. Inside `.GitHub` folder, create **another new folder** named `workflows`
-5. Inside `workflows`, create a **text file** named `publish.yml`
+1. Return to RStudio and navigate to the file tab in the output pane.
+2. Create a **new folder** named `.github`
+3. Inside the `.github` folder, create **another new folder** named `workflows`
+4. Inside the `workflows` folder, create a **text file** named `publish.yml`.
 
-The file path of `publish.yml` should be the following: `... > your-directory > .GitHub > workflows > publish.yml`.
+The file path of `publish.yml` should be the following: `... > your-directory > .github > workflows > publish.yml`.
+
+```{r eval=F}
+├── ...
+  ├── quarto-tutorial
+    ├── quarto-tutorial.Rproj
+    ├── other files
+    ├── .github
+      ├── workflows
+        ├── publish.yml
+```
 
 ![](images/13_publishyml.png)
 
@@ -162,7 +174,7 @@ jobs:
         with:
           target: gh-pages
         env:
-          GitHub_TOKEN: ${{ secrets.GitHub_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 # Push publish.yml to repo
@@ -185,14 +197,14 @@ git push origin main
 Actions:
 
 1. Return to GitHub.
-2. Click on the Actions tab. Wait until all actions are green (website is built).
+2. Click on the Actions tab. Wait until all actions are green (indicating that the website has been built).
 
 ![](images/19_actions_done.png)
 
-3. Click on the Settings tab. Look at the side column and click "Pages." Ensure that your GitHub Pages site is built from the **gh-pages branch**.
+3. Click on the "Settings" tab. Look at the side column and click "Pages." Ensure that your GitHub Pages site is built from the `gh-pages` branch.
 
 ![](images/17_settings_gh-pages.png)
-4. Click **Visit site** at the top of the page. Congratulations, you've built your site! Whenever you edit this site in RStudio, you can use the three Git commands to publish it automatically. It'll take a couple minutes for the site to change.
+4. Click "Visit site" at the top of the page. Congratulations, you've built your site! Whenever you edit this site in RStudio, you can use the three Git commands to publish it automatically. It'll take a couple minutes for the site to change.
 
 ![](images/21_website_created.png)
 
