@@ -18,10 +18,11 @@ number-sections: true
 lightbox: true
 ---
 
-You must have the following:
+You need the following:
 
 - [ ] RStudio
 - [ ] GitHub account
+- [ ] 20 minutes
 
 ::: {.callout-note}
 This website's directory is `quarto-tutorial`. The directory in the images is `quarto_web_tutorial`, which I deleted because I prefer dashes over underscores in URLs.
@@ -45,10 +46,13 @@ Actions: File > New Project > New Directory > Quarto Website
     ├── quarto-tutorial
 ```
 
+::: {.callout-important}
+You will not be able to change this directory's name or location once you link it to a GitHub repository.
+:::
+
 3. Engine: **Knitr**
 4. Select **Create a git repository**
 5. Select **Use renv with this project**
-
 
 ![](images/01_create_project.png){group="my-gallery"}
 
