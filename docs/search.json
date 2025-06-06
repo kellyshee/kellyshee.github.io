@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This website is a guide on how to easily publish and maintain a Quarto website using RStudio and GitHub. I learned this from a video by Melissa Van Bussel. My tutorial differs from hers in that I use RStudio’s terminal instead of a Windows terminal with zsh."
+  }
+]
