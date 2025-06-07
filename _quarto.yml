@@ -3,21 +3,19 @@ project:
   output-dir: docs # delete _site
 
 website:
-  title: "Quarto Tutorial"
+  title: "Kelly Shee"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - posts.qmd
     tools:
       - icon: github
         href: https://github.com/kellyshee/quarto-tutorial
         aria-label: GitHub
     tools-collapse: false
-    # right: 
-    #   - icon: github
-    #     href: https://github.com/kellyshee/quarto-tutorial
-    #     aria-label: GitHub
+    
   bread-crumbs: true
   # back-to-top-navigation: true
 

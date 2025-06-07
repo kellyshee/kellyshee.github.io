@@ -1,5 +1,15 @@
 ---
 title: "How to Publish a Quarto Website with GitHub Actions"
+description: "blog post description (appears underneath the title in smaller text) which is included on the listing page"
+author:
+  - name: Kelly Shee
+    url: https://kellyshee.github.io/
+date: 06-07-2025
+categories: [Quarto, R, GitHub] # self-defined categories
+citation: 
+  url: https://samanthacsik.github.io/posts/2022-10-24-my-blog-post/ 
+image: preview-image.png
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 
 format: 
   html:
