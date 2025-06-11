@@ -5,11 +5,11 @@ project:
 website:
   title: "Kelly Shee"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
-      - about.qmd
       - posts.qmd
+      # - about.qmd
     tools:
       - icon: github
         href: https://github.com/kellyshee/quarto-tutorial
@@ -27,6 +27,13 @@ format:
     css: styles.css
     toc: true
     link-external-newwindow: true
+    
+# about:
+#   template: jolla
+#   links: 
+#     - text: youtube
+#       icon: youtube
+#       href: https://youtube.com/
 
 
 
