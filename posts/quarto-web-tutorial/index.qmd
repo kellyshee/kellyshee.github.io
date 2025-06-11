@@ -21,7 +21,7 @@ format:
     
     code-links:
       - text: Source
-        href: https://github.com/kellyshee/kellyshee.github.io/blob/main/index.qmd
+        href: https://github.com/kellyshee/kellyshee.github.io/blob/main/posts/quarto-web-tutorial/index.qmd
         icon: github
       - text: Knitr with renv
         href: https://quarto.org/docs/publishing/github-pages.html
@@ -287,3 +287,12 @@ git push origin main
 # Credit
 
 I learned this from a [video](https://www.youtube.com/watch?v=arzBRW5XIkg&list=LL) by [Melissa Van Bussel](https://www.melissavanbussel.com). My tutorial differs from hers in that I use RStudio's terminal instead of a Windows terminal with zsh.
+
+::: {.callout-tip collapse="true"}
+
+## Motivation
+
+I frequently forget the things I've learned, and it's annoying having to dig through paper notebooks. Obsidian, Notion, and other software are additionally annoying because I keep overfixating on settings. 
+
+You know what isn't so terrible? [RStudio]{style="color:red"} (it helps that I've been acquainted with it since 2018). It's nice having your own website to reference while also doubling as your portfolio. So, if you're like me, create your own website!
+:::
