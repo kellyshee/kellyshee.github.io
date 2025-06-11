@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kellyshee.github.io/posts/quarto-web-tutorial/index.html</loc>
-    <lastmod>2025-06-11T02:24:45.136Z</lastmod>
-  </url>
-  <url>
     <loc>https://kellyshee.github.io/posts.html</loc>
-    <lastmod>2025-06-11T02:24:45.052Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kellyshee.github.io/about.html</loc>
-    <lastmod>2025-06-11T02:24:44.866Z</lastmod>
+    <lastmod>2025-06-11T02:54:17.306Z</lastmod>
   </url>
   <url>
     <loc>https://kellyshee.github.io/index.html</loc>
-    <lastmod>2025-06-11T02:24:45.052Z</lastmod>
+    <lastmod>2025-06-11T02:54:17.306Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kellyshee.github.io/posts/quarto-web-tutorial/index.html</loc>
+    <lastmod>2025-06-11T02:54:17.389Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kellyshee.github.io/about.html</loc>
+    <lastmod>2025-06-11T02:54:17.121Z</lastmod>
   </url>
 </urlset>
