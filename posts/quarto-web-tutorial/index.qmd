@@ -7,8 +7,6 @@ author:
 date: 06-07-2025
 date-modified: last-modified 
 categories: [Quarto, R, GitHub] # self-defined categories
-# citation: 
-#   url: https://samanthacsik.github.io/posts/2022-10-24-my-blog-post/ image: preview-image.png
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 
 format: 

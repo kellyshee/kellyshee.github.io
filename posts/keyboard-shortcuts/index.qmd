@@ -1,0 +1,10 @@
+---
+title: "Shortcuts I Frequently Use"
+format: html
+---
+
+# RStudio
+
+- command + option + i \t create R code chunk 
+
+

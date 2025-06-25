@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Kelly Shee",
     "section": "",
-    "text": "Kelly Shee\nRecent graduate nearing retirement."
+    "text": "Kelly Shee\nCreated this website because I wanted less verbose, straightforward instructions on how to do stuff."
   },
   {
     "objectID": "index.html#action",
@@ -32,7 +32,7 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "How to Publish a Quarto Website with GitHub Actions\n\n\n\nQuarto\n\n\nR\n\n\nGitHub\n\n\n\nSurprisingly simpler than expected.\n\n\n\nKelly Shee\n\n\nJun 7, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "ဗမာ\n\n\n\nဗမာ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShortcuts I Frequently Use\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Add a Blog to Your Quarto Website\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Publish a Quarto Website with GitHub Actions\n\n\n\nQuarto\n\n\nR\n\n\nGitHub\n\n\n\nSurprisingly simpler than expected.\n\n\n\nKelly Shee\n\n\nJun 7, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2025-06-07-quarto-tutorial/index.html",
@@ -54,5 +54,12 @@
     "title": "Kelly Shee",
     "section": "",
     "text": "Welcome to my website."
+  },
+  {
+    "objectID": "posts/burmese/index.html",
+    "href": "posts/burmese/index.html",
+    "title": "ဗမာ",
+    "section": "",
+    "text": "qwerty keyboard\n\ntest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCol1\nCol2\nCol3\nCol4\nCol5\nCol6\nCol7\nCol8\nCol9\nCol10\n\n\n\n\n\n\n\nq\nw\ne\nr\nt\ny\nu\ni\no\np\n[\n]\n\\\n\n\n်\nို\nေ\nရ\nတ\nယ\nု\nိ\nော\nပ\n\n\n\n\n\n\nqwerty\n\n်\n\nို\nေ\nရ\nတ\nယ\nasdfg\nzxcvb"
   }
 ]
