@@ -9,9 +9,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Kelly Shee",
+    "title": "index",
     "section": "",
-    "text": "Kelly Shee\nCreated this website because I wanted less verbose, straightforward instructions on how to do stuff."
+    "text": "test"
   },
   {
     "objectID": "index.html#action",
@@ -65,8 +65,8 @@
   {
     "objectID": "posts/keyboard-shortcuts/index.html",
     "href": "posts/keyboard-shortcuts/index.html",
-    "title": "Shortcuts I Frequently Use",
+    "title": "Keyboard Shortcuts I Frequently Use",
     "section": "",
-    "text": "RStudio\n\ncommand + option + i reate R code chunk\n\nI"
+    "text": "RStudio\n\n\n\nKeyboard shorcut\nWhat it does\n\n\n\n\n⌘ ⇧ K\nRender the current document\n\n\n⌘ ⌥ I\nNew R code chunk\n\n\n^ 1\nGo to source pane\n\n\n^ 2\nGo to console pane\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow did I type ⌘ and other symbols?\n\n\n\n\n\nOpen symbols panel: ⌘ ^ ␣\n\n\n\nSymbol\nName\n\n\n\n\n⌘\nplace of interest\n\n\n⇧\nupwards white arrow\n\n\n⌥\noption\n\n\n␣\nopen box"
   }
 ]
