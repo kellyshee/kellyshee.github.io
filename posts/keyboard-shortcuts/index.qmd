@@ -1,10 +1,27 @@
 ---
-title: "Shortcuts I Frequently Use"
+title: "Keyboard Shortcuts I Frequently Use"
 format: html
 ---
 
 # RStudio
 
-- command + option + i \t create R code chunk 
+| Keyboard shorcut | What it does                |
+|------------------|-----------------------------|
+| `⌘ ⇧ K`          | Render the current document |
+| `⌘ ⌥ I`          | New R code chunk            |
+| `^ 1`            | Go to source pane           |
+| `^ 2`            | Go to console pane          |
+|                  |                             |
 
+::: {.callout-tip collapse="true"}
+## How did I type ⌘ and other symbols?
 
+Open symbols panel: `⌘ ^ ␣`
+
+| Symbol | Name                |
+|--------|---------------------|
+| ⌘      | place of interest   |
+| ⇧      | upwards white arrow |
+| ⌥      | option              |
+| ␣      | open box            |
+:::
