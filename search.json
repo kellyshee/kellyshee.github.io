@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
+    "section": "",
+    "text": "How to Add a Blog to Your Quarto Website\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nဗမာ\n\n\n\nဗမာ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeyboard Shortcuts I Frequently Use\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Publish a Quarto Website with GitHub Actions\n\n\n\nQuarto\n\nR\n\nGitHub\n\n\n\nSurprisingly simpler than expected.\n\n\n\nKelly Shee\n\n\nJun 7, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hello!",
+    "section": "",
+    "text": "Go to my blog to check out what I’ve been working on!"
+  },
+  {
+    "objectID": "posts/keyboard-shortcuts/index.html",
+    "href": "posts/keyboard-shortcuts/index.html",
+    "title": "Keyboard Shortcuts I Frequently Use",
+    "section": "",
+    "text": "RStudio\n\n\n\nKeyboard shorcut\nWhat it does\n\n\n\n\n⌘ ⇧ K\nRender the current document\n\n\n⌘ ⌥ I\nNew R code chunk\n\n\n^ 1\nGo to source pane\n\n\n^ 2\nGo to console pane\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow did I type ⌘ and other symbols?\n\n\n\n\n\nOpen symbols panel: ⌘ ^ ␣\n\n\n\nSymbol\nName\n\n\n\n\n⌘\nplace of interest\n\n\n⇧\nupwards white arrow\n\n\n⌥\noption\n\n\n␣\nopen box"
+  },
+  {
+    "objectID": "posts/burmese/index.html",
+    "href": "posts/burmese/index.html",
+    "title": "ဗမာ",
+    "section": "",
+    "text": "qwerty keyboard\n\ntest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCol1\nCol2\nCol3\nCol4\nCol5\nCol6\nCol7\nCol8\nCol9\nCol10\n\n\n\n\n\n\n\nq\nw\ne\nr\nt\ny\nu\ni\no\np\n[\n]\n\\\n\n\n်\nို\nေ\nရ\nတ\nယ\nု\nိ\nော\nပ\n\n\n\n\n\n\nqwerty\n\n်\n\nို\nေ\nရ\nတ\nယ\nasdfg\nzxcvb"
+  },
+  {
     "objectID": "posts/quarto-web-tutorial/index.html",
     "href": "posts/quarto-web-tutorial/index.html",
     "title": "How to Publish a Quarto Website with GitHub Actions",
@@ -7,24 +35,10 @@
     "text": "You need the following:\n\nRStudio\nGitHub account\n6 to 20 minutes\n\n\n\n\n\n\n\nNote\n\n\n\nThis website’s directory is kellyshee.github.io. The directory in the images is quarto_web_tutorial, which I deleted because I dislike underscores in URLs.\n\n\n\n1 Create a R project\n\nActionsVisual\n\n\n\nNavigate to File &gt; New Project &gt; New Directory &gt; Quarto Website.\nDirectory name\n\nIf this website is for . . .\n\nyourself: your-github-username.github.io\nclass: your-class-name\n\n\nCreate project as subdirectory\n\nWhere do you want to place this project? It should be somewhere easy to find, such as on your desktop.\nI’ll be creating more version-controlled projects, so I placed this directory (kellyshee.github.io) inside a “github” folder, which is located inside my Box drive. Therefore, this directory’s file path is the following:\n\n\n\n├── Box-Box\n  ├── github\n    ├── kellyshee.github.io\n\n\nEngine: Knitr\nSelect Create a git repository\nSelect Use renv with this project\n\n\n\n\n\n\n\n\n\n\n2 Create a GitHub repo\n\nActionsVisual\n\n\n\nGo to GitHub.\nClick the green “New” button next to “Top repositories” in the left column.\nType your repository name, which must be the same as your directory name.\nDo not change anything else. Scroll down to create your repository.\n\n\n\n\n\n\n\n\n\n3 Copy Git commands\n\nActionsVisual\n\n\n\nScroll to the section that says “. . . or push an existing repository from the command line.”\nCopy the first two lines.\nReturn to RStudio.\n\n\n\n\n\n\n\n\n\n4 Paste Git commands into terminal\n\nActionsVisual\n\n\n\nNavigate to the console pane and switch to the terminal tab.\nPaste and enter the commands. The terminal will not return anything.\n\n\n\n\n\n\n\n\n\n5 Push local files to repo\n\nActionsVisual\n\n\n\nCopy and paste the following commands one by one into the terminal. Output will apppear, indicating that files are being uploaded to your repository.\n\n\n\n\nTerminal\n\ngit add .\ngit commit -m \"Initial commit\"\ngit push origin main\n\n\n\nReturn to your GitHub repository and refresh the page. Your project’s files should appear there.\n\n\n\n\n\n\n\n\n\n\n6 Create gh-pages branch\n\nActionsVisual\n\n\n\nOn the same page, click the “main” branch button underneath the repository name.\nClick “View all branches.”\nClick “New branch” on the right side of the screen.\nName and create a new branch called gh-pages.\n\n\n\n\n\n\n\n\n\n\n7 Create automation file\n\nActionsVisual\n\n\n\nReturn to RStudio and navigate to the file tab in the output pane.\nCreate a new folder named .github\nInside the .github folder, create another new folder named workflows\nInside the workflows folder, create a text file named publish.yml.\n\nThe file path of publish.yml should be the following:\n\n├── ...\n  ├── kellyshee.github.io\n    ├── kellyshee.github.io.Rproj\n    ├── other files\n    ├── .github\n      ├── workflows\n        ├── publish.yml\n\n\n\n\n\n\n\n\n\n\n8 Copy and paste code into publish.yml\nPaste the following code into publish.yml, then save the file.\n\n\n\n.github/workflows/publish.yml\n\n# Knitr with renv\n\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Install R\n        uses: r-lib/actions/setup-r@v2\n        with:\n          r-version: '4.2.0'\n\n      - name: Install R Dependencies\n        uses: r-lib/actions/setup-renv@v2\n        with:\n          cache-version: 1\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n9 Push publish.yml to repo\n\nActionsVisual\n\n\n\nReturn to the terminal tab in the console pane.\nCopy and paste the following commands line by line into the terminal. Output will appear.\n\n\n\n\nTerminal\n\ngit add .\ngit commit -m \"Add publish.yml to automate publishing of site\"\ngit push origin main\n\n\n\n\n\n\n\n\n\n\n10 Check repo settings\n\nActionsVisual\n\n\n\nReturn to GitHub.\nClick on the Actions tab. Wait until all actions are green.\nClick on the “Settings” tab. Look at the side column and click “Pages.” Ensure that your GitHub Pages site is built from the gh-pages branch.\nClick “Visit site” at the top of the page. Whenever you edit this site in RStudio, you can use the three Git commands to publish it automatically. It’ll take a couple minutes for the site to change.\n\n\n\n\n\n\n\n\n\n\n\n\n11 Credit\nI learned this from a video by Melissa Van Bussel. My tutorial differs from hers in that I use RStudio’s terminal instead of a Windows terminal with zsh.\n\n\n\n\n\n\nMotivation\n\n\n\n\n\nI frequently forget the things I’ve learned, and it’s annoying having to dig through paper notebooks. Obsidian, Notion, and other software are additionally annoying because I keep overfixating on settings.\nYou know what isn’t so terrible? RStudio (it helps that I’ve been acquainted with it since 2018). It’s nice having your own website to reference while also doubling as your portfolio. So, if you’re like me, create your own website!"
   },
   {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Blog",
-    "section": "",
-    "text": "How to Publish a Quarto Website with GitHub Actions\n\n\n\nQuarto\n\nR\n\nGitHub\n\n\n\nSurprisingly simpler than expected.\n\n\n\nKelly Shee\n\n\nJun 7, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "Retired!"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Kelly Shee",
-    "section": "",
-    "text": "Kelly Shee\nRecent graduate nearing retirement."
   }
 ]

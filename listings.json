@@ -2,6 +2,9 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/quarto-blog-tutorial/index.html",
+      "/posts/burmese/index.html",
+      "/posts/keyboard-shortcuts/index.html",
       "/posts/quarto-web-tutorial/index.html"
     ]
   }
